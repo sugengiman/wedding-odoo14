@@ -1,2 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+<<<<<<< HEAD
 access_wedding_wedding,wedding.wedding,model_wedding_wedding,base.group_user,1,1,1,1
+=======
+access_wedding_dekor,wedding.wedding.dekor,model_wedding_dekor,,1,1,1,1
+access_wedding_patner,wedding.wedding.patner,model_wedding_patner,,1,1,1,1
+>>>>>>> 666b2ae38dee3edff61c141980d45fb2002484f6
