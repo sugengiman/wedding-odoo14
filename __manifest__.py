@@ -24,11 +24,7 @@
 
     # always loaded
     'data': [
-<<<<<<< HEAD
-        # 'security/ir.model.access.csv',
-=======
         'security/ir.model.access.csv',
->>>>>>> 666b2ae38dee3edff61c141980d45fb2002484f6
         'views/views.xml',
         'views/templates.xml',
     ],
