@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- wedding.panggung tree view -->
-    <record id="model_name_view_tree" model="ir.ui.view">
+    <record id="wedding_panggung_view_tree" model="ir.ui.view">
         <field name="name">Jenis Panggung</field>
         <field name="model">wedding.panggung</field>
         <field name="arch" type="xml">
@@ -30,7 +30,7 @@
         id="wedding_akomodasi_panggung_menu_act" 
         name="Panggung Pelaminan" 
         parent="wedding_akomodasi_menu_categ" 
-        action="" 
+        action="wedding_panggung_action" 
         sequence="10"/>
 
 </odoo>
