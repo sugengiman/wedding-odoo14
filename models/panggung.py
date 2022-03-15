@@ -11,13 +11,13 @@ class Panggung(models.Model):
     pelaminan = fields.Many2one(comodel_name='wedding.pelaminan', 
                                 string='Tipe Pelaminan', 
                                 required=True, #membuat form harus diisi
-                                domain=[('harga','>','15000000',)] #membuat filter pada bagian tampilan harga 
+                                domain=[('harga','>','15000000',)] #membuat filter pada bagian pelaminan dengan harga tertentu 
                                 )
     bunga = fields.Selection(string='Tipe Bunga', selection=[('bunga mati', 'Bunga Mati'),('bunga hidup', 'Bunga Hidup')], required=True)
-    accesories = fields.Char(string='Accesories')
+    accesories = fields.Char(string='Accesories') 
     # harga = fields.Integer(string='Harga')
-    harga = fields.Char(compute='_compute_harga', string='Harga Sewa')
-    
+    harga = fields.Char(compute='_compute_harga', string='Harga Sewa') #oofcompute digunakan untuk membuat menghitung beberapa nilai pada inputan lain
+
     @api.depends('pelaminan')
     def _compute_harga(self):
         for record in self:
