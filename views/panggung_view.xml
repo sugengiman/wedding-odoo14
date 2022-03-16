@@ -10,10 +10,50 @@
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="pelaminan"/>
+                <field name="kursipengantin"/>
+                <field name="kursitamu"/>
                 <field name="bunga"/>
                 <field name="accesories"/>
                 <field name="harga"/>
             </tree>
+        </field>
+    </record>
+
+    <!-- wedding.panggung form view -->
+    <record id="wedding_panggung_view_form" model="ir.ui.view">
+        <field name="name">wedding.panggung.view.form</field>
+        <field name="model">wedding.panggung</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="pelaminan"/>
+                        <field name="kursipengantin"/>
+                        <field name="kursitamu"/>
+                    </group>
+                    <group>
+                        <field name="bunga"/>
+                        <field name="accesories"/>
+                        <field name="stock"/>
+                    </group>
+                    <group>
+                        <field name="harga"/>
+                    </group>
+                    <notebook>
+                        <page string="Deskripsi Pelaminan">
+                            <field name="des_pelaminan"/>
+                        </page>
+                        <page string="Deskripsi Kursi Pengantin">
+                            <field name="des_kursipengantin"/>
+                        </page>
+                        <page string="Deskripsi Kursi Tamu">
+                            <field name="des_kursitamu"/>
+                        </page>
+                    </notebook>                                                
+                </sheet>
+            </form>
         </field>
     </record>
 

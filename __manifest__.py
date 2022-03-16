@@ -18,6 +18,7 @@
     # for the full list
     'category': 'Administration',
     'version': '0.1',
+    'application':True,
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -30,6 +31,8 @@
         'views/menu.xml',
         'views/panggung_view.xml',
         'views/pelaminan_view.xml',
+        'views/kursipengantin_view.xml',
+        'views/kursitamu_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
