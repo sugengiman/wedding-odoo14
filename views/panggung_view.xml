@@ -16,6 +16,7 @@
                 <field name="accesories"/>
                 <field name="harga"/>
                 <field name="stock"/>
+                <field name="orderdetail_ids"/>
             </tree>
         </field>
     </record>
@@ -52,6 +53,14 @@
                         </page>
                         <page string="Deskripsi Kursi Tamu">
                             <field name="des_kursitamu"/>
+                        </page>
+                        <page string="Deskripsi Order Detail">
+                            <field name="orderdetail_ids">
+                                <tree>
+                                    <field name="panggung_id"/>
+                                    <field name="qty" sum="Total"/>
+                                </tree>
+                            </field>                            
                         </page>
                     </notebook>                                                
                 </sheet>

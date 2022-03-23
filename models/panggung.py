@@ -26,6 +26,7 @@ class Panggung(models.Model):
     bunga = fields.Selection(string='Tipe Bunga', selection=[('bunga mati', 'Bunga Mati'),('bunga hidup', 'Bunga Hidup')], required=True)
     accesories = fields.Char(string='Accesories') 
     # harga = fields.Integer(string='Harga')
+    orderdetail_ids = fields.One2many(comodel_name='wedding.order_detail', inverse_name='panggung_id', string='Order Detail')
     harga = fields.Integer(compute='_compute_harga', string='Harga Sewa') #oofcompute digunakan untuk membuat menghitung beberapa nilai pada inputan lain
 
     @api.depends('pelaminan','kursipengantin','kursitamu')

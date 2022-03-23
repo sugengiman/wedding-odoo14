@@ -1,3 +1,4 @@
+from email.policy import default
 from odoo import api, fields, models
 
 
@@ -5,6 +6,7 @@ class Order(models.Model):
     _name = 'wedding.order'
     _description = 'New Description'
   
+    tanggal_pesan = fields.Datetime(string='Tanggal Pesan', default=fields.Datetime.now())
     orderdetail_ids = fields.One2many(comodel_name='wedding.order_detail', inverse_name='order_id', string='Order Detail')
     name = fields.Char(string='Kode Order', required=True)
     total = fields.Integer(compute='_compute_total', string='Total Harga', store=True) #store agar harga tidak berubah meskipun harga barangnya sudah diperbarui
@@ -36,3 +38,11 @@ class Order_Detail(models.Model):
     def _compute_harga_satuan(self):
         for record in self:
             record.harga_satuan = record.panggung_id.harga
+    
+    @api.model
+    def create(self, vals):
+        record = super(Order_Detail, self).create(vals)
+        if record.qty:
+            self.env['wedding.panggung'].search([('id', '=', record.panggung_id.id)]).write({'stock': record.panggung_id.stock-record.qty})
+            return record
+    
