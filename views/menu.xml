@@ -15,10 +15,10 @@
         sequence="10"/>
 
     <!-- This Menu Item Must have a parent -->
-    <!-- <menuitem 
-        id="wedding_pelaminan_menu_categ" 
-        name="Pelaminan" 
+    <menuitem 
+        id="wedding_order_menu_categ" 
+        name="Order" 
         parent="wedding_menu_root" 
-        sequence="15"/> -->
+        sequence="15"/>
 
 </odoo>

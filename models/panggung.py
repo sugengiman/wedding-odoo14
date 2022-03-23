@@ -26,19 +26,18 @@ class Panggung(models.Model):
     bunga = fields.Selection(string='Tipe Bunga', selection=[('bunga mati', 'Bunga Mati'),('bunga hidup', 'Bunga Hidup')], required=True)
     accesories = fields.Char(string='Accesories') 
     # harga = fields.Integer(string='Harga')
-    harga = fields.Char(compute='_compute_harga', string='Harga Sewa') #oofcompute digunakan untuk membuat menghitung beberapa nilai pada inputan lain
+    harga = fields.Integer(compute='_compute_harga', string='Harga Sewa') #oofcompute digunakan untuk membuat menghitung beberapa nilai pada inputan lain
 
     @api.depends('pelaminan','kursipengantin','kursitamu')
     def _compute_harga(self):
         for record in self:
             record.harga = record.pelaminan.harga + record.kursipengantin.harga + record.kursitamu.harga
 
-    stock = fields.Integer(string='stock')
     des_pelaminan = fields.Char(compute='_compute_des_pelaminan', string='Deskripsi Pelaminan')
     
     @api.depends('pelaminan')
     def _compute_des_pelaminan(self):
-        for record in self:
+        for record in self: 
             record.des_pelaminan = record.pelaminan.deskripsi
 
     des_kursipengantin = fields.Char(compute='_compute_des_kursipengantin', string='Deskripsi Kursi Pengantin')
@@ -55,5 +54,6 @@ class Panggung(models.Model):
         for record in self:
             record.des_kursitamu = record.kursitamu.deskripsi
 
-    
+    stock = fields.Integer(string='Stock Paket')
+       
     
