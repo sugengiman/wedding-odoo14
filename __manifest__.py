@@ -16,8 +16,9 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Administration',
     'version': '0.1',
+    'application':True,
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -29,6 +30,13 @@
         'views/templates.xml',
         'views/menu.xml',
         'views/panggung_view.xml',
+        'views/pelaminan_view.xml',
+        'views/kursipengantin_view.xml',
+        'views/kursitamu_view.xml',
+        'views/order_view.xml',
+        'views/pegawai_view.xml',
+        'views/customer_view.xml',
+        'views/pengembalian_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

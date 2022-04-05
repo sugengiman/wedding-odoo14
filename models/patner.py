@@ -1,7 +1,7 @@
 from odoo import api, fields, models
 
 
-class patnet(models.Model):
+class patner(models.Model):
     _name = 'wedding.patner' 
     #_name = 'wedding.patner' || module = nama project, name = nama classnya
     _description = 'Standar class patners'
